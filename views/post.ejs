@@ -8,17 +8,17 @@
         <form
           class="col-1"
           action="/post/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-        >
+          method="POST">
+          <!-- This places a button element with Bootstrap classes for styling and a heart icon -->
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form>
+        <!-- : This displays the number of likes for the post dynamically by injecting the `post.likes` value into an HTML heading element (`<h3>`). -->
         <h3 class="col-3">Likes: <%= post.likes %></h3>
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
-          class="col-3"
-        >
+          class="col-3">
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
         </form>
         <%}%>
@@ -28,15 +28,16 @@
       <p><%= post.caption %></p>
     </div>
     <ul>
+      <!--Code iterates through an array of comments, and for each comment, it displays the username of the user who made the comment followed by the comment text. -->
       <% for(var i=0; i<comments.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
-          <%= comments[i].comment%>
+          <%= comments[i].user.userName%>: <%= comments[i].comment%>
         </li>
       <% } %>
-
     </ul>
     <div class="mt-5">
       <h2>Add a comment</h2>
+      <!-- This sets up a form for creating a comment, with the `action` attribute indicating where the form data will be sent and the HTTP method being POST. -->
       <form action="/comment/createComment/<%= post._id%>" method="POST">
         <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
