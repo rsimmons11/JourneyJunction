@@ -84,6 +84,9 @@ exports.postSignup = (req, res, next) => {
     gmail_remove_dots: false,
   });
 
+  // Log the userName before creating the user
+  console.log('Creating a user with userName:', req.body.userName);
+  
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,

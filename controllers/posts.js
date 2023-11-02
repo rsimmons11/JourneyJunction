@@ -3,6 +3,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -25,8 +26,9 @@ module.exports = {
     try {
       // This line uses Mongoose to find a 'post' document in the MongoDB database by its unique identifier (req.params.id). The result is stored in the 'post' variable. This assumes there's a Mongoose model named Post.
       const post = await Post.findById(req.params.id);
+      console.log('Post:', post);
       // This code retrieves comments associated with the post. It uses the Mongoose Comment model to find comments where the 'post' field matches the post's unique identifier. The .sort({ createdAt: "desc" }) sorts the comments in descending order by their creation timestamp. The .populate('user') is used to populate the 'user' field in each comment with the associated user information. The .lean() method is used to convert the results into plain JavaScript objects, which can be more efficient for rendering in templates.
-      const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).populate('user').lean();
+      const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "desc" }).populate('user', 'userName').lean();
       // This line renders a template file named "post.ejs" (presumably an EJS template). It passes the post (the post document), user (the user making the request), and comments (the array of comments) as variables to be used within the template for rendering.
       res.render("post.ejs", { post: post, user: req.user, comments: comments });
     } catch (err) {
@@ -51,6 +53,7 @@ module.exports = {
         likes: 0,
         // This sets the 'user' field to the user's unique identifier (often an ObjectId) obtained from 'req.user.id'. It associates the post with the user who is creating it.
         user: req.user.id,
+        userName: req.user.userName,
       });
       console.log("Post has been added!");
       res.redirect("/profile");
@@ -89,4 +92,29 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+
+  // New controller method to update 'post' documents with usernames
+  updatePostsWithUsernames: async (req, res) => {
+    try {
+      console.log("updatePosts route accessed");
+
+      // Fetch all 'post' documents
+      const posts = await Post.find({});
+
+      // Iterate through the posts and update the 'userName' field
+      for (const post of posts) {
+        const user = await User.findById(post.user);
+        if (user) {
+          post.userName = user.userName;
+          await post.save();
+        }
+      }
+
+      console.log("Posts updated with usernames.");
+      res.redirect("/"); // Redirect to a suitable location after the update.
+    } catch (err) {
+      console.error(err);
+    }
+  },  
+
 };

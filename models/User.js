@@ -2,8 +2,14 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  userName: { type: String, unique: true },
-  email: { type: String, unique: true },
+  userName: { 
+    type: String, 
+    unique: true
+  },
+  email: { 
+    type: String, 
+    unique: true
+  },
   password: String,
 });
 
@@ -14,6 +20,10 @@ UserSchema.pre("save", function save(next) {
   if (!user.isModified("password")) {
     return next();
   }
+
+  // Log the userName before password hashing
+  console.log('User being saved with userName:', user.userName);
+
   bcrypt.genSalt(10, (err, salt) => {
     if (err) {
       return next(err);
@@ -23,6 +33,10 @@ UserSchema.pre("save", function save(next) {
         return next(err);
       }
       user.password = hash;
+
+      // Log the userName after password hashing
+      console.log('User saved with userName:', user.userName);
+
       next();
     });
   });
@@ -35,6 +49,9 @@ UserSchema.methods.comparePassword = function comparePassword(
   cb
 ) {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+    // Log the userName during password comparison
+    console.log('User being compared with userName:', this.userName);
+    
     cb(err, isMatch);
   });
 };

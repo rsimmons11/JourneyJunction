@@ -1,3 +1,5 @@
+//POST SCHEMA
+
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
@@ -7,11 +9,11 @@ const PostSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: true,
+    required: true,
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    required: true,
   },
   caption: {
     type: String,
@@ -24,6 +26,10 @@ const PostSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  userName: {
+    type: String,
+    ref: "User"
   },
   createdAt: {
     type: Date,
