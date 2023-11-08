@@ -57,7 +57,9 @@ app.use(passport.session());
 //Use flash messages for errors, info, ect...
 app.use(flash());
 
+
 //Setup Routes For Which The Server Is Listening
+
 // This line sets up a middleware for the root URL path ("/"). It tells Express to use the route handlers defined in the 'mainRoutes' object when a request is made to the root URL. This can be used for defining routes like the homepage.
 app.use("/", mainRoutes);
 // This line sets up a middleware for the "/post" URL path. It tells Express to use the route handlers defined in the 'postRoutes' object when a request is made to a URL that starts with "/post". This is often used for routes related to posts.

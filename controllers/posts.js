@@ -94,27 +94,27 @@ module.exports = {
   },
 
   // New controller method to update 'post' documents with usernames
-  updatePostsWithUsernames: async (req, res) => {
-    try {
-      console.log("updatePosts route accessed");
+  // updatePostsWithUsernames: async (req, res) => {
+  //   try {
+  //     console.log("updatePosts route accessed");
 
-      // Fetch all 'post' documents
-      const posts = await Post.find({});
+  //     // Fetch all 'post' documents
+  //     const posts = await Post.find({});
 
-      // Iterate through the posts and update the 'userName' field
-      for (const post of posts) {
-        const user = await User.findById(post.user);
-        if (user) {
-          post.userName = user.userName;
-          await post.save();
-        }
-      }
+  //     // Iterate through the posts and update the 'userName' field
+  //     for (const post of posts) {
+  //       const user = await User.findById(post.user);
+  //       if (user) {
+  //         post.userName = user.userName;
+  //         await post.save();
+  //       }
+  //     }
 
-      console.log("Posts updated with usernames.");
-      res.redirect("/"); // Redirect to a suitable location after the update.
-    } catch (err) {
-      console.error(err);
-    }
-  },  
+  //     console.log("Posts updated with usernames.");
+  //     res.redirect("/"); // Redirect to a suitable location after the update.
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // },  
 
 };
