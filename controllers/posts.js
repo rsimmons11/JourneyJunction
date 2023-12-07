@@ -41,16 +41,22 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Post.create({
+
         // This sets the 'title' field of the post to the value obtained from the request body (req.body.title). It typically represents the title or heading of the post.
         title: req.body.title,
-        // This sets the 'image' field of the post to the secure URL of the image. It is obtained from the 'result' object, which likely contains the image URL after uploading the image to a service like Cloudinary.
+
+        // This sets the 'image' field of the post to the secure URL of the image. It is obtained from the 'result' object, which  contains the image URL after uploading the image to Cloudinary.
         image: result.secure_url,
+
         // This sets the 'cloudinaryId' field of the post to the public ID of the uploaded image. It is also obtained from the 'result' object and may be used for reference or deletion of the image from the image hosting service (e.g., Cloudinary).
         cloudinaryId: result.public_id,
-        // This sets the 'caption' field of the post to the value obtained from the request body (req.body.caption). It typically represents additional text or a description associated with the post.
+
+        // This sets the 'caption' field of the post to the value obtained from the request body (req.body.caption). It represents additional text or a description associated with the post.
         caption: req.body.caption,
+
         // This initializes the 'likes' field to 0. It's common to start with zero likes when creating a new post, and this field can be incremented as users like the post.
         likes: 0,
+
         // This sets the 'user' field to the user's unique identifier (often an ObjectId) obtained from 'req.user.id'. It associates the post with the user who is creating it.
         user: req.user.id,
         userName: req.user.userName,
