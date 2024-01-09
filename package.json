@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "JourneyJunction",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Connecting Travelers Worldwide, Sharing Adventures",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
