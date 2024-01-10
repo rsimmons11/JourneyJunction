@@ -22,6 +22,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [MongoDB](https://www.mongodb.com/)
 * [Bootstrap](https://getbootstrap.com)
 
+---
 
 ## Installation
 
@@ -35,6 +36,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
   - API_SECRET = `your cloudinary api secret`
  
 `npm start`
+
+---
        
 ## Contact
 
@@ -52,6 +55,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
     <img height="48" src="https://github.com/rsimmons11/rsimmons11/assets/131081276/e078162d-0f6b-414a-8d27-a5b7ec58776f"
   </a>
 </p>
+
+---
 
 ## Acknowledgments
 
