@@ -6,6 +6,7 @@
 </p>
 
 # JourneyJunction
+---
 
 ## Description
 
@@ -61,6 +62,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
+* [leonnoel](https://github.com/leonnoel)
 * [awesome-readme](https://github.com/matiassingers/awesome-readme)
 * [readme-template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
 * [dbader](https://github.com/dbader/readme-template)
