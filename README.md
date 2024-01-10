@@ -64,7 +64,9 @@ This section should list any major frameworks/libraries used to bootstrap your p
   - CLOUD_NAME = `your cloudinary cloud name`
   - API_KEY = `your cloudinary api key`
   - API_SECRET = `your cloudinary api secret`
-  - 
+ 
+`npm start`
+    
 ## Usage
 
 Provide instructions and examples for use. Include screenshots as needed.
@@ -89,22 +91,6 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 See the [open issues](https://github.com/rahulkarda/readme-template/issues) for a full list of proposed features (and known issues).
 
-## Features
-
-If your project has a lot of features, list them here.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
@@ -112,25 +98,6 @@ List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
 If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## Contact
 
