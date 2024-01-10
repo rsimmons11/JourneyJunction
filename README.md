@@ -6,10 +6,12 @@
 </p>
 
 # JourneyJunction
-```
+
 ## Description
 
 JunctionJourney is your passport to a vibrant community of world travelers. Share your global adventures through captivating images, titles, and captions. Create posts, engage with fellow travelers, and explore the world through their lens. Your journey awaits – join JunctionJourney and let your wanderlust connect you to a worldwide expedition of experiences.
+
+---
 
 ## Built With
 
