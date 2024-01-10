@@ -1,14 +1,14 @@
 <%- include('partials/header') -%>
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center mt-5">
-    <div class="col-6">
+    <div class="col-6 card">
       <h2><%= post.title %></h2>
       <p class="text-muted small">from: <%= post.userName %>, <%= post.createdAt.toLocaleDateString('en-US') %></p>
       <p><%= post.caption %></p>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row justify-content-between">
         <form
-          class="col-1"
+          class="col-3"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST">
           <!-- This places a button element with Bootstrap classes for styling and a heart icon -->
@@ -26,9 +26,9 @@
         <%}%>
       </div>
     </div>
-    <div class="col-3 mt-5">
+    <!-- <div class="col-3 mt-5">
       <p><%= post.caption %></p>
-    </div>
+    </div> -->
     <ul>
       <!--Code iterates through an array of comments, and for each comment, it displays the username of the user who made the comment followed by the comment text. -->
       <% for(var i=0; i<comments.length; i++) {%>
@@ -37,12 +37,12 @@
         </li>
       <% } %>
     </ul>
-    <div class="mt-5">
+    <div class="mt-5 card">
       <h2>Add a comment</h2>
       <!-- This sets up a form for creating a comment, with the `action` attribute indicating where the form data will be sent and the HTTP method being POST. -->
       <form action="/comment/createComment/<%= post._id%>" method="POST">
         <div class="mb-3">
-            <label for="comment" class="form-label">Comment</label>
+            <label for="comment" class="form-label"></label>
             <input type="text" class="form-control" id="comment" name="comment">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
