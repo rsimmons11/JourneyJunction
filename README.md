@@ -1,14 +1,12 @@
 <p align="center">
-<img src="https://img.shields.io/github/contributors/rsimmons11/readme-template?color=blue&style=for-the-badge">
 <img src="https://img.shields.io/github/forks/rsimmons11/readme-template?color=lgreen&style=for-the-badge">
 <img src="https://img.shields.io/github/stars/rsimmons11/readme-template?color=yellow&style=for-the-badge">
 <img src="https://img.shields.io/github/issues/rsimmons11/readme-template?color=red&style=for-the-badge">
 <img src="https://img.shields.io/github/issues-pr/rsimmons11/readme-template?color=darkorange&label=Pull%20Requests&style=for-the-badge">
-<img src="https://img.shields.io/github/license/rsimmons11/readme-template?style=for-the-badge">
 </p>
 
 # JourneyJunction
-
+```
 ## Description
 
 JunctionJourney is your passport to a vibrant community of world travelers. Share your global adventures through captivating images, titles, and captions. Create posts, engage with fellow travelers, and explore the world through their lens. Your journey awaits – join JunctionJourney and let your wanderlust connect you to a worldwide expedition of experiences.
