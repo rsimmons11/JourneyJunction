@@ -67,6 +67,10 @@ app.use("/post", postRoutes);
 // This line sets up a middleware for the "/comment" URL path. It tells Express to use the route handlers defined in the commentRoutes object when a request is made to a URL that starts with "/comment". This is typically used for routes related to comments.
 app.use("/comment", commentRoutes);
 
+app.get('/', (req, res) => {
+  res.send('APP IS RUNNING')
+})
+
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
