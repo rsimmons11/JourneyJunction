@@ -9,7 +9,7 @@
 
 ### [Live Site](https://journeyjunction.onrender.com/)
 
-![Restaurant Landing Page](https://i.ibb.co/5jxBKpw/image.png)
+![Restaurant Landing Page](public/imgs/journeyJunction.png)
 ---
 
 ## Description
